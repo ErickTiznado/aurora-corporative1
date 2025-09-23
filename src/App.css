@@ -1,42 +1,41 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+    /* Gradiente de fondo más sutil y oscuro */
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(15, 18, 25, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(20, 25, 35, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0b0d 0%, #151a20 25%, #0f1419 50%, #1a1f26 75%, #0d1015 100%);
+    background-attachment: fixed;
+    min-height: 100vh;  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  --space-1: 0.25rem;
+  --space-2: 0.50rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+:root{
+    /* Mantienen la relación 4pt */
+    --space-1: clamp(0.20rem, 0.15rem + 0.30vw, 0.35rem);
+    --space-2: clamp(0.40rem, 0.30rem + 0.60vw, 0.70rem);
+    --space-3: clamp(0.60rem, 0.45rem + 0.90vw, 1.05rem);
+    --space-4: clamp(0.80rem, 0.60rem + 1.20vw, 1.40rem);
+    --space-6: clamp(1.20rem, 0.90rem + 1.80vw, 2.10rem);
+    --space-8: clamp(1.60rem, 1.20rem + 2.40vw, 2.80rem);
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

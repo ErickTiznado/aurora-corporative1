@@ -1,68 +1,132 @@
+/*
+  Baseline normalize/reset CSS
+  - Consistente entre navegadores
+  - Accesible por defecto
+  - Opiniones mínimas, fácil de extender
+*/
+
+/* 1) Box sizing y tipografía base */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { 
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
+  /* Permite temas claros/oscuros nativos si el UA lo soporta */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: Canvas;
+  color: CanvasText;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* 2) Tipos y elementos de texto */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em;
+  line-height: 1.2;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+p, figure, blockquote { margin: 0 0 1em; }
+
+small { font-size: 0.875em; }
+
+/* 3) Enlaces */
+a { 
+  color: LinkText; 
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+
+a:not([href]) { color: inherit; text-decoration: none; }
+
+/* 4) Listas */
+ul[role=\"list\"], ol[role=\"list\"] { list-style: none; padding: 0; }
+
+/* 5) Imágenes y multimedia */
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+
+img, video { height: auto; }
+
+/* Evita desbordes por palabras largas */
+:where(p, h1, h2, h3, h4, h5, h6) { overflow-wrap: break-word; }
+
+/* 6) Formularios */
+button, input, select, textarea { 
+  font: inherit; 
+  color: inherit; 
+  letter-spacing: inherit;
+}
+
+button, [type=\"button\"], [type=\"submit\"], [type=\"reset\"] {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+button:disabled, [type=\"button\"]:disabled, [type=\"submit\"]:disabled, [type=\"reset\"]:disabled {
+  cursor: not-allowed;
+}
+
+/* Remueve estilos nativos agresivos en iOS/Android */
+input, textarea, select { 
+  -webkit-appearance: none; 
+  appearance: none; 
+  background: none;
+  border: none;
+}
+
+/* Restablece borde y fondo básicos sin imponer UI concreta */
+input:not([type=\"checkbox\"]):not([type=\"radio\"]), textarea, select {
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.625rem;
+}
+
+label { display: inline-block; }
+
+/* 7) Foco accesible por defecto */
+:where(:focus-visible) {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+/* 8) Elementos pre / code */
+pre, code, kbd, samp { 
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace; 
+  font-size: 0.95em;
+}
+
+pre { 
+  margin: 0; 
+  overflow: auto; 
+  padding: 1rem; 
+  background: color-mix(in oklab, Canvas 96%, CanvasText 4%);
+  border-radius: 0.5rem;
+}
+
+/* 9) Tablas básicas */
+table { border-collapse: collapse; width: 100%; }
+th, td { padding: 0.5rem; text-align: left; }
+
+/* 10) Prefiere reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+  *, *::before, *::after { 
+    animation-duration: 0.001ms !important; 
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; 
+    scroll-behavior: auto !important;
   }
 }
+
+/* 11) Contenedor app root útil (opcional) */
+#root, #app { isolation: isolate; min-height: 100%; }
