@@ -1,0 +1,72 @@
+/* Stepper simplificado para armonizar con los inputs (look login) */
+.stepper___container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0 var(--space-8) var(--space-6);
+}
+
+.step {
+    background: var(--aurora-bg-input);
+    border: 1px solid var(--aurora-border);
+    color: var(--aurora-text-secondary);
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: background .3s, border-color .3s, color .3s, transform .3s;
+}
+
+/* Estados dinámicos */
+.step.active {
+    background: var(--aurora-primary);
+    border-color: var(--aurora-primary);
+    color: #fff;
+    box-shadow: 0 4px 10px -4px rgba(16,157,141,.4);
+}
+
+.step.completed {
+    background: var(--aurora-primary-light);
+    border-color: var(--aurora-primary-light);
+    color: #fff;
+    opacity: .85;
+}
+
+.step.completed:hover { opacity: 1; }
+
+.step:disabled { cursor: default; opacity: .9; }
+
+.step:not(:first-of-type):hover {
+    background: var(--aurora-bg-dark);
+    border-color: var(--aurora-border-hover);
+}
+
+.hor___separator {
+    flex: 1 1 auto;
+    height: 2px;
+    background: var(--aurora-border);
+    border-radius: 2px;
+    position: relative;
+}
+
+.step p { margin: 0; }
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+    .stepper___container { gap: var(--space-3); }
+    .hor___separator { height: 1px; }
+    .step { width:34px; height:34px; font-size:.7rem; }
+}

@@ -26,6 +26,24 @@
   --space-16: 4rem;
   --space-24: 6rem;
   --space-32: 8rem;
+
+
+    --aurora-primary: #109D8D;
+  --aurora-primary-hover: #0d7a6e;
+  --aurora-primary-light: #45B199;
+  --aurora-primary-dark: #067467;
+  --aurora-accent: #4ECDC4;
+  --aurora-bg-dark: #0E1213;
+  --aurora-bg-input: #161c20;
+  --aurora-border: #222627;
+  --aurora-border-hover: #2a3135;
+  --aurora-text-primary: #ffffff;
+  --aurora-text-secondary: #b8c5d1;
+  --aurora-text-muted: #64748b;
+  /* Semantic status colors */
+  --aurora-success: #2ecc71; /* Match teal leaning green */
+  --aurora-warning: #f1c40f; /* Warm amber for contrast on dark */
+  --aurora-danger: #e74c3c;  /* Soft red that works on dark bg */
 }
 
 @media (prefers-reduced-motion: no-preference) {

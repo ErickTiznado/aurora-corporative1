@@ -1,0 +1,47 @@
+.stepper___container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.step {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.step.active {
+    background-color: #007bff; /* Active step color */
+    color: white;
+}
+
+.step.completed {
+    background-color: #28a745; /* Completed step color */
+    color: white;
+}
+
+.hor___separator {
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e0; /* Separator color */
+    margin: 0 10px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

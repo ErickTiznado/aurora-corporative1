@@ -1,0 +1,91 @@
+/* Contenedor del paso (similar a interior del login) */
+.stper___container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+        padding: var(--space-6) var(--space-6) var(--space-6);
+        border-radius: var(--space-3);
+        height: 65vh;
+        width: 100%;
+        min-height: 100%;
+        box-sizing: border-box;
+        animation: fadeInUp .6s cubic-bezier(.4, 0, .2, 1);
+        justify-content: space-between;
+}
+
+.stper___header h2 {
+        margin: 0 0 var(--space-2);
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--aurora-text-primary);
+}
+
+.stper___desc {
+        margin: 0;
+        font-size: .85rem;
+        color: var(--aurora-text-secondary);
+}
+
+/* Formulario */
+.stper___form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+}
+
+/* Reutilizamos la misma convención visual del login */
+.input___container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+}
+
+.input___container label {
+        color: var(--aurora-text-secondary);
+        font-size: .8rem;
+        font-weight: 500;
+}
+
+.input___container:focus-within label {
+        color: var(--aurora-primary-light);
+}
+
+
+/* Botón de acción */
+.stper___actions {
+        display: flex;
+        justify-content: flex-end;
+}
+
+.stper___next-btn {
+        background: var(--aurora-primary);
+        border: 1px solid var(--aurora-primary);
+        padding: var(--space-3) var(--space-6);
+        width: 40%;
+        border-radius: var(--space-2);
+        color: #fff;
+        font-size: .85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background .3s, transform .3s, box-shadow .3s;
+}
+
+.stper___next-btn:hover {
+        background: var(--aurora-primary-hover);
+        transform: translateY(-2px);
+}
+
+.stper___next-btn:active {
+        transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+        .stper___container {
+                padding: var(--space-5) var(--space-5) var(--space-4);
+        }
+
+        .stper___next-btn {
+                width: 100%;
+        }
+}

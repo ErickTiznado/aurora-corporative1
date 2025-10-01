@@ -77,8 +77,8 @@ button:disabled, [type=\"button\"]:disabled, [type=\"submit\"]:disabled, [type=\
   cursor: not-allowed;
 }
 
-/* Remueve estilos nativos agresivos en iOS/Android */
-input, textarea, select { 
+/* Remueve estilos nativos agresivos en iOS/Android (excepto checkbox y radio) */
+input:not([type="checkbox"]):not([type="radio"]), textarea, select { 
   -webkit-appearance: none; 
   appearance: none; 
   background: none;

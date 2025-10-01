@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.label {
+    font-size: 16px;
+    color: #333;
+}
+
+.active {
+    font-weight: bold;
+    color: #007bff; /* Example active color */
+}

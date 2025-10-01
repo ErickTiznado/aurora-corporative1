@@ -1,0 +1,44 @@
+/* StepSecurity.css */
+
+/* Styles for the security step in the registration process */
+.step-security {
+    background-color: #f9f9f9; /* Light background for the step */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the step */
+    margin: 10px 0; /* Spacing between steps */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.step-security h2 {
+    font-size: 1.5rem; /* Heading size */
+    color: #333; /* Dark text color */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.step-security p {
+    font-size: 1rem; /* Paragraph size */
+    color: #666; /* Lighter text color */
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
+.step-security input {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside input */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 4px; /* Rounded corners for input */
+    margin-bottom: 15px; /* Space below inputs */
+}
+
+.step-security button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Button text color */
+    padding: 10px 15px; /* Padding inside button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.step-security button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
